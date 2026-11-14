@@ -1,13 +1,23 @@
-
+import os
 import streamlit as st
 from textwrap import dedent
 from urllib.parse import urlparse
 from youtube_analyzer import build_youtube_agent
-
+from dotenv import load_dotenv
 
 # ==========================================
 # 1. PAGE CONFIGURATION
 # ==========================================
+
+load_dotenv()
+
+if not os.getenv("GROQ_API_KEY"):
+    try:
+        os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+    except Exception:
+        st.error("Groq API key is not configured.")
+        st.stop()
+
 
 st.set_page_config(
     page_title="YouTube AI Analyzer",
