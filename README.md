@@ -76,6 +76,5 @@ Never share your API key publicly.
 
 ## 👨‍💻 Author
 
-YOUR NAME
-
+Isaac Naveed
 Computer Science Student | AI/ML Enthusiast
